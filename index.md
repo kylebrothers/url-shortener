@@ -15,7 +15,7 @@ layout: default
       <button onclick="CopyToClipboard([{{ page.url }}]);"><span>content_copy</span></button>
     </td>
     <td class="col3">
-      {{ description }}
+      {{ page.description }}
     </td>
   </tr>
 
