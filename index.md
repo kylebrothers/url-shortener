@@ -9,14 +9,14 @@ layout: default
 {% for page in redirects %}
 
   <tr class="row1">
-    <td class="col1">
-  [{{ page.url }}]({{ page.url | relative_url }})
+    <td markdown="span" class="col1">
+      [{{ page.url }}]({{ page.url | relative_url }})
     </td>
-    <td class="col2">
+    <td markdown="span" class="col2">
       <button onclick="CopyToClipboard([{{ page.url }}]);"><span>content_copy</span></button>
     </td>
-    <td class="col3">
-  {{ page.description }}
+    <td markdown="span" class="col3">
+      {{ page.description }}
     </td>
   </tr>
 
