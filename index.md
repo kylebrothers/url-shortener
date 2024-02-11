@@ -6,16 +6,17 @@ layout: default
 
 <table>
 
-  {% for page in redirects %}
+{% for page in redirects %}
+
   <tr class="row1">
     <td class="col1">
-      [{{ page.url }}]({{ page.url | relative_url }})
+  [{{ page.url }}]({{ page.url | relative_url }})
     </td>
     <td class="col2">
       <button onclick="CopyToClipboard([{{ page.url }}]);"><span>content_copy</span></button>
     </td>
     <td class="col3">
-      {{ page.description }}
+  {{ page.description }}
     </td>
   </tr>
 
