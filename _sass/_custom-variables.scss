@@ -4,9 +4,11 @@
 // Default variable overrides
 $enable-rounded: false;
 
-$info: $orange; // set the $primary variable
+/* change the colors */
+$primary: rebeccapurple;
+$danger: #dd0000;
+$success: lime;
+$warning: orange;
+$info: aqua;
 
-// merge with existing $theme-colors map
-$theme-colors: map-merge($theme-colors, (
-  "info": $info
-));
+$body-bg: #f3f3f0;
