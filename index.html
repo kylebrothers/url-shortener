@@ -4,22 +4,27 @@ layout: default
 
 {% assign redirects = site.urls | where_exp: "item", "item.redirect_to != nil" %}
 
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
 {% for page in redirects %}
 
-<div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> <a href="{{ page.url | relative_url }}">{{ page.url }}</a></h5>
-    <p class="card-text">
-      {{ page.description }}
-    </p>
+<div class="col">
+  <div class="card h-100 text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"> <a href="{{ page.url | relative_url }}">{{ page.url }}</a></h5>
+      <p class="card-text">
+        {{ page.description }}
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <a href="{{ page.url | relative_url }}">Go to this page</a>
+      </li>
+      <li class="list-group-item">
+        <a href="#" onclick="CopyToClipboard([{{ page.url }}]);">Copy link to clipboard</a>
+      </li>
+    </ul>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <a href="{{ page.url | relative_url }}">Go to this page</a>
-    </li>
-    <li class="list-group-item"><a onclick="CopyToClipboard([{{ page.url }}]);">Copy link to clipboard</a></li>
-  </ul>
 </div>
 
 {% endfor %}
