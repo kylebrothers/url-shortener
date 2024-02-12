@@ -12,15 +12,21 @@ layout: default
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">
-      [{{ page.url }}]({{ page.url | relative_url }})
+      
+[{{ page.url }}]({{ page.url | relative_url }})
+
     </h5>
     <p class="card-text">
-      {{ page.description }}
+    
+{{ page.description }}
+
     </p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      [{{ page.url }}]({{ page.url | relative_url }})
+      
+[{{ page.url }}]({{ page.url | relative_url }})
+      
     </li>
     <li class="list-group-item"><a onclick="CopyToClipboard([{{ page.url }}]);">Copy link to clipboard</a></li>
   </ul>
