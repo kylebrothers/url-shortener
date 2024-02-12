@@ -8,17 +8,17 @@ layout: default
 
 {% for page in redirects %}
 
-  <tr class="row1">
-    <td markdown="span" class="col1">
-      [{{ page.url }}]({{ page.url | relative_url }})
-    </td>
-    <td class="col2">
-      <button onclick="CopyToClipboard([{{ page.url }}]);"><span>content_copy</span></button>
-    </td>
-    <td markdown="span" class="col3">
-      {{ page.description }}
-    </td>
-  </tr>
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">[{{ page.url }}]({{ page.url | relative_url }})</h5>
+    <p class="card-text">{{ page.description }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">[{{ page.url }}]({{ page.url | relative_url }})</li>
+    <li class="list-group-item"><a onclick="CopyToClipboard([{{ page.url }}]);">Copy link to clipboard</a></li>
+  </ul>
+</div>
 
 {% endfor %}
 </table>
