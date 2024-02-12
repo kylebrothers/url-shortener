@@ -16,12 +16,12 @@ layout: default
         {{ page.description }}
       </p>
     </div>
-    <ul class="list-group list-group-flush bg-info">
-      <li class="list-group-item">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item  bg-info">
         <a href="{{ page.url | relative_url }}">Go to this page</a>
       </li>
-      <li class="list-group-item">
-        <a href="#" onclick="CopyToClipboard([{{ page.url }}]);">Copy link to clipboard</a>
+      <li class="list-group-item bg-info">
+        <a href="#" onclick="return CopyToClipboard([{{ page.url }}]);">Copy link to clipboard</a>
       </li>
     </ul>
   </div>
@@ -31,4 +31,7 @@ layout: default
 
 </div>
   
-<script>function CopyToClipboard(parameter) {navigator.clipboard.writeText(parameter);}</script>
+<script>
+  function CopyToClipboard(parameter) {navigator.clipboard.writeText(parameter);}
+  return false;
+</script>
