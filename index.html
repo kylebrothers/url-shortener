@@ -9,7 +9,7 @@ layout: default
 {% for page in redirects %}
 
 <div class="col">
-  <div class="card h-100 bg-alert text-dark mb-3" style="max-width: 25rem;">
+  <div class="card h-100 bg-warning text-dark mb-3" style="max-width: 25rem;">
     <div class="card-body">
       <h5 class="card-title">{{ page.titlecamel }}</h5>
       <p class="card-text">
@@ -17,7 +17,7 @@ layout: default
       </p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item  bg-info">
+      <li class="list-group-item" style="background-color: #adb5bd !important;">
         <a href="{{ page.url | relative_url }}">Go to this page</a>
       </li>
       <li class="list-group-item bg-info">
