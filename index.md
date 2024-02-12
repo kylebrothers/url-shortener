@@ -4,8 +4,6 @@ layout: default
 
 {% assign redirects = site.urls | where_exp: "item", "item.redirect_to != nil" %}
 
-<table>
-
 {% for page in redirects %}
 
 <div class="card" style="width: 18rem;">
@@ -33,6 +31,5 @@ layout: default
 </div>
 
 {% endfor %}
-</table>
 
 <script>function CopyToClipboard(parameter) {navigator.clipboard.writeText(parameter);}</script>
