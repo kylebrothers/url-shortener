@@ -1,3 +1,6 @@
 ---
 redirect_to: https://cardmaillouisville.sharepoint.com/:b:/s/PediatricResearchAccesstoServices/EXoyjtg7jqtHjFCnQOrDvzMB9ta3yVyzV_fu6mfCc-dLcQ?e=iewdZR
+cameltitle: ADF
+description: Investigator data privacy attestation
+section: none
 ---
