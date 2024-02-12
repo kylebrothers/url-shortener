@@ -4,7 +4,7 @@ layout: default
 
 {% assign redirects = site.urls | where_exp: "item", "item.redirect_to != nil" %}
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-4">
 
 {% for page in redirects %}
 
