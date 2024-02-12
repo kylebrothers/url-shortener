@@ -3,3 +3,10 @@
 
 // Default variable overrides
 $enable-rounded: false;
+
+$info: $orange; // set the $primary variable
+
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, (
+  "info": $info
+));
