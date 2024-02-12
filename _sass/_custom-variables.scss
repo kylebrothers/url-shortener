@@ -1,6 +1,9 @@
 // Placeholder to allow overriding predefined variables smoothly.
 // You should be able to override any Bootstrap variable here: https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
 
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
 // Default variable overrides
 $theme-colors: (
   "info": #ffc107,
