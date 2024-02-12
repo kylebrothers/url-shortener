@@ -6,7 +6,8 @@ layout: default
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
-{% for page in redirects %}
+  {% for page in redirects %}
+    {%- if page.section == "none" -%}
 
 <div class="col">
   <div class="card h-100 text-dark mb-3" style="max-width: 25rem;background-color: #EB1946 !important;">
@@ -27,6 +28,8 @@ layout: default
   </div>
 </div>
 
+  {%- endif -%}
+  
 {% endfor %}
 
 </div>
