@@ -10,12 +10,14 @@ layout: default
     {%- if page.section == "none" -%}
 
 <div class="col">
-  <div class="card h-100 text-dark mb-3" style="max-width: 25rem;background-color: #EB1946 !important;">
+  <div class="card h-100 text-dark mb-3" style="max-width: 20rem;">
     <div class="card-body">
       <h5 class="card-title">{{ page.titlecamel }}</h5>
       <p class="card-text">
         {{ page.description }}
       </p>
+      <a href="{{ page.url | relative_url }}" class="btn btn-primary">Go to this page</a>
+      <a href="#" onclick="return CopyToClipboard([{{ page.url }}]);"> class="btn btn-primary">Copy link to clipboard</a>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" style="background-color: #EB1946 !important;">
