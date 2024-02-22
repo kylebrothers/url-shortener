@@ -6,6 +6,10 @@ layout: default
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
+{% assign polina_products = collection.products | where: 'vendor', "Polina's Potent Potions" %}
+
+{% render "card" for redirects as page %}
+
   {% for page in redirects %}
     {%- if page.section == "none" -%}
 
