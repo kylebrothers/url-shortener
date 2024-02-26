@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="col">
+  <div class="card h-100 text-dark border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ page.titlecamel }}</h5>
+      <p class="card-text">
+        {{ page.description }}
+      </p>
+      <a href="{{ page.url | relative_url }}" class="btn" style="background-color: #4CAF50;">Go to this page</a>
+      <a href="#" onclick="return CopyToClipboard([{{ page.url }}]);" class="btn" style="background-color: #4CAF50;">Copy link to clipboard</a>
+    </div>
+  </div>
+</div>
