@@ -6,8 +6,7 @@ layout: default
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
-https://jekyllrb.com/docs/liquid/filters/#binary-operators-in-where_exp-filter40
-{% assign approval_redirects = redirects | where: 'section', "approval" %}
+{% assign approval_redirects = redirects | where: 'page', "page.section == 'approval'" %}
 
 {% render "card" for approval_redirects as page %}
 
