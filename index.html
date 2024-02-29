@@ -10,7 +10,7 @@ layout: default
   {% include card.html url=page.url titlecamel=page.titlecamel description=page.description color="#EB1946" %}
 {% endfor %}
 
-{% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil AND item.section == 'approval'" %}
+{% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'approval'" %}
 
 {% for page in approval_redirects %}
   K
