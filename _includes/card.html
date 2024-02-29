@@ -1,12 +1,16 @@
 <div class="col">
   <div class="card h-100 text-dark mb-3" style="max-width: 20rem; border-color: {{ include.color }};">
     <div class="card-body d-flex flex-column">
-      <h5 class="card-title">{{ include.titlecamel }}</h5>
-      <p class="card-text">
-        {{ include.description }}
-      </p>
+      <div>
+        <h5 class="card-title">{{ include.titlecamel }}</h5>
+        <p class="card-text">
+          {{ include.description }}
+        </p>
+      </div>
+      <div class="text-center">
         <a href="{{ include.url | relative_url }}" class="btn mt-auto" style="background-color: {{ include.color }}; width: 100%;">Go to this page</a>
         <a href="#" onclick="return CopyToClipboard([{{ include.url }}]);" class="btn mt-auto" style="background-color: {{ include.color }}; width: 100%;">Copy link to clipboard</a>
+      </div>
     </div>
   </div>
 </div>
