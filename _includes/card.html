@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="col">
+  <div class="card h-100 text-dark border-primary mb-3" style="max-width: 20rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ include.titlecamel }}</h5>
+      <p class="card-text">
+        {{ include.description }}
+      </p>
+      <a href="{{ include.url | relative_url }}" class="btn" style="background-color: {{ include.color }};">Go to this page</a>
+      <a href="#" onclick="return CopyToClipboard([{{ include.url }}]);" class="btn" style="background-color: {{ include.color }};">Copy this link to clipboard</a>
+    </div>
+  </div>
+</div>
