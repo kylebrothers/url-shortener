@@ -6,10 +6,14 @@ layout: default
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
+{% for page in redirects %}
+  {% include card.html url=page.url titlecamel=page.titlecamel description=page.description color="#EB1946" %}
+{% endfor %}
+  
 {% assign approval_redirects = redirects | where: 'page', "page.section == 'approval'" %}
 
 {% for page in approval_redirects %}
-  {% include card.html url=page.url titlecamel=page.titlecamel description=page.description color="#EB1946" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#EB1946" %}
 {% endfor %}
 
 </div>
