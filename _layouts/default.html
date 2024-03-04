@@ -14,8 +14,12 @@
     </main>
 
     <script src="{{ '/assets/js/bootstrap.bundle.min.js' | relative_url }}"></script>
-    <script>function CopyToClipboard(parameter) {navigator.clipboard.writeText(parameter);}
-      return false;
+    <script>function CopyToClipboard(parameter) {
+      navigator.clipboard
+        .writeText(parameter);
+        .then(() => alert("Copied to clipboard"))
+        .catch((e) => alert(e.message));
+    }
     </script>
   </body>
 
