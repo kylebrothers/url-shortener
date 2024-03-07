@@ -8,7 +8,7 @@
     </div>
     <div class="card-footer">
       <a class="btn w-100" href="{{ include.url | relative_url }}" role="button" style="background-color: {{ include.color }}; margin-top:6px;">Go to this page</a>
-      <a class="btn w-100" onclick="CopyToClipboard('{{ include.url | absolute_url }}');" style="background-color: {{ include.color }}; margin-top:6px;">Copy link to clipboard</a>
+      <button class="btn w-100" onclick="CopyToClipboard('{{ include.url | absolute_url }}');" style="background-color: {{ include.color }}; margin-top:6px;">Copy link to clipboard</button>
     </div>
   </div>
 </div>
