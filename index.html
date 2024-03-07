@@ -15,7 +15,7 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:12px;">
+<h2 style="margin-top:12px;">Case report resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'casereport'" %}
@@ -26,7 +26,7 @@ layout: default
 
 </div>
   
-<h2 style="margin-top:12px;">
+<h2 style="margin-top:12px;">Poster resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'poster'" %}
@@ -38,7 +38,7 @@ layout: default
 </div>
 
 
-<h2 style="margin-top:12px;">
+<h2 style="margin-top:12px;">Epic and SlicerDicer</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'epic'" %}
@@ -50,7 +50,7 @@ layout: default
 </div>
 
   
-<h2 style="margin-top:12px;">
+<h2 style="margin-top:12px;">Data and technology resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'tech'" %}
