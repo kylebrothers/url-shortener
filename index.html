@@ -4,7 +4,7 @@ layout: default
 
 {% assign redirects = site.urls | where_exp: "item", "item.redirect_to != nil" %}
 
-<h2>Getting your research project approved</h2>
+<h2 style="margin-top:12px;">Getting your research project approved</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'approval'" %}
@@ -15,7 +15,7 @@ layout: default
 
 </div>
 
-<h2>Case report resources</h2>
+<h2 style="margin-top:12px;">
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'casereport'" %}
@@ -26,4 +26,38 @@ layout: default
 
 </div>
   
+<h2 style="margin-top:12px;">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+
+{% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'poster'" %}
+
+{% for page in casereport_redirects %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="F7971E" %}
+{% endfor %}
+
+</div>
+
+
+<h2 style="margin-top:12px;">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+
+{% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'epic'" %}
+
+{% for page in casereport_redirects %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="006dcc" %}
+{% endfor %}
+
+</div>
+
+  
+<h2 style="margin-top:12px;">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+
+{% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'tech'" %}
+
+{% for page in casereport_redirects %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="FDC800" %}
+{% endfor %}
+
+</div>
 
