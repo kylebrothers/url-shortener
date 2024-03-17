@@ -9,7 +9,7 @@ layout: default
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'help'" %}
 
 {% for page in approval_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#FDC800" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#006dcc" %}
 {% endfor %}
 
 </div>
