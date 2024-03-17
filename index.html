@@ -9,13 +9,13 @@ layout: default
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'help'" %}
 
 {% for page in approval_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#006dcc" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#77BD43" %}
 {% endfor %}
 
 </div>
 
 <h2 style="margin-top:18px;">Getting your research project approved</h2>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'approval'" %}
 
@@ -26,7 +26,7 @@ layout: default
 </div>
 
 <h2 style="margin-top:18px;">Case report resources</h2>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'casereport'" %}
 
@@ -37,7 +37,7 @@ layout: default
 </div>
   
 <h2 style="margin-top:18px;">Poster resources</h2>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'poster'" %}
 
@@ -49,7 +49,7 @@ layout: default
 
 
 <h2 style="margin-top:18px;">Epic and SlicerDicer</h2>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'epic'" %}
 
@@ -61,7 +61,7 @@ layout: default
 
   
 <h2 style="margin-top:18px;">Data and technology resources</h2>
-<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'tech'" %}
 
