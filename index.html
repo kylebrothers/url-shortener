@@ -4,6 +4,16 @@ layout: default
 
 {% assign redirects = site.urls | where_exp: "item", "item.redirect_to != nil" %}
 
+<div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+  
+{% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'help'" %}
+
+{% for page in approval_redirects %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#FDC800" %}
+{% endfor %}
+
+</div>
+
 <h2 style="margin-top:12px;">Getting your research project approved</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
   
