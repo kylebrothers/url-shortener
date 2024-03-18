@@ -4,7 +4,7 @@ layout: default
 
 {% assign redirects = site.urls | where_exp: "item", "item.redirect_to != nil" %}
 
-<h2 style="margin-top:18px;">Submit a request for research support</h2>
+<h2 style="margin-top:18px;">Submit a Request for Research Support</h2>
 <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'help'" %}
@@ -15,7 +15,7 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:18px;">Getting your research project approved</h2>
+<h2 style="margin-top:18px;">Getting a Research Project Approved</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'approval'" %}
@@ -26,7 +26,7 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:18px;">Case report resources</h2>
+<h2 style="margin-top:18px;">Case Report Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'casereport'" %}
@@ -37,7 +37,7 @@ layout: default
 
 </div>
   
-<h2 style="margin-top:18px;">Poster resources</h2>
+<h2 style="margin-top:18px;">Poster Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'poster'" %}
@@ -61,7 +61,7 @@ layout: default
 </div>
 
   
-<h2 style="margin-top:18px;">Data and technology resources</h2>
+<h2 style="margin-top:18px;">Data and Technology Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'tech'" %}
