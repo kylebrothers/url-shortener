@@ -10,7 +10,7 @@ layout: default
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'help'" %}
 
 {% for page in approval_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#77BD43" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#77BD43" style="text-white" %}
 {% endfor %}
 
 </div>
@@ -21,7 +21,7 @@ layout: default
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'approval'" %}
 
 {% for page in approval_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#EB1946" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#EB1946" style="text-white" %}
 {% endfor %}
 
 </div>
@@ -32,7 +32,7 @@ layout: default
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'casereport'" %}
 
 {% for page in casereport_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#00A6CE" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#00A6CE" style="text-white" %}
 {% endfor %}
 
 </div>
@@ -43,7 +43,7 @@ layout: default
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'poster'" %}
 
 {% for page in casereport_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#F7971E" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#F7971E" style="text-dark" %}
 {% endfor %}
 
 </div>
@@ -55,7 +55,7 @@ layout: default
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'epic'" %}
 
 {% for page in casereport_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#006dcc" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#006dcc" style="text-white" %}
 {% endfor %}
 
 </div>
@@ -67,7 +67,7 @@ layout: default
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'tech'" %}
 
 {% for page in casereport_redirects %}
-  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#FDC800" %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#FDC800" style="text-dark" %}
 {% endfor %}
 
 </div>
