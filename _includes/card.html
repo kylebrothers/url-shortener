@@ -7,8 +7,8 @@
       </p>
     </div>
     <div class="card-footer">
-      <a class="btn w-100" href="{{ include.url | relative_url }}" role="button" style="background-color: {{ include.color }}; text-shadow:1px 1px 20px #fff, 1px 1px 7px #fff; margin-top:6px;">Go to /{{ include.titlecamel }}</a>
-      <button class="btn w-100" style="background-color: {{ include.color }};  text-shadow:1px 1px 20px #fff, 1px 1px 7px #fff; margin-top:6px;" onclick="CopyToClipboard('{{ include.url | absolute_url }}');">Copy link to clipboard</button>
+      <a class="btn w-100 {{ include.color }}" href="{{ include.url | relative_url }}" role="button" style="background-color: {{ include.color }}; margin-top:6px;">Go to /{{ include.titlecamel }}</a>
+      <button class="btn w-100{{ include.color }}" style="background-color: {{ include.color }};  margin-top:6px;" onclick="CopyToClipboard('{{ include.url | absolute_url }}');">Copy link to clipboard</button>
     </div>
   </div>
 </div>
