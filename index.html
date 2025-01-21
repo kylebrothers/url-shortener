@@ -48,6 +48,17 @@ layout: default
 
 </div>
 
+<h2 style="margin-top:24px;">Grant Resources</h2>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
+  
+{% assign grant_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'grant'" %}
+
+{% for page in grant_redirects %}
+  {% include_relative _includes/card.html url=page.url titlecamel=page.titlecamel description=page.description color="#00A6CE" style="text-white" %}
+{% endfor %}
+
+</div>
+
 
 <h2 style="margin-top:24px;">Epic and SlicerDicer</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
