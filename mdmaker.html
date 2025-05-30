@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Markdown File Generator</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: normal;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .required {
+            color: #dc3545;
+        }
+        
+        .help-text {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+        
+        .filename-group {
+            display: flex;
+        }
+        
+        .filename-group .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+        }
+        
+        .filename-extension {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding: 0.375rem 0.75rem;
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column vw-100 vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">HelpMeNCRI.org</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-content py-2 flex-shrink-0" aria-label="Content">
+        <div class="container">
+            
+            <h2 style="margin-top:24px;">Markdown File Generator</h2>
+            
+            <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1 g-4">
+                <div class="col">
+                    <div class="card h-100 text-dark mb-3" style="border-color: #77BD43;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Generate Markdown Files</h5>
+                            <p class="card-text">
+                                Create markdown files with YAML front matter for your projects
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="mdForm">
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <label for="redirectTo" class="form-label">Redirect URL <span class="required">*</span></label>
+                        <input type="url" class="form-control" id="redirectTo" name="redirectTo" placeholder="https://example.com/your-redirect-url" required>
+                        <div class="help-text">The URL where users will be redirected</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="section" class="form-label">Section</label>
+                        <input type="text" class="form-control" id="section" name="section" placeholder="none" value="none">
+                        <div class="help-text">Section categorization (typically "none")</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="description" class="form-label">Description <span class="required">*</span></label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Brief description of the page or form" required></textarea>
+                        <div class="help-text">A clear description of what this page or form does</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="titleCamel" class="form-label">Title (CamelCase) <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="titleCamel" name="titleCamel" placeholder="MyPageTitle" required>
+                        <div class="help-text">Page title in CamelCase format</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="filename" class="form-label">Filename <span class="required">*</span></label>
+                        <div class="filename-group">
+                            <input type="text" class="form-control" id="filename" name="filename" placeholder="mypagetitle" pattern="[a-zA-Z0-9_-]+" required>
+                            <span class="filename-extension">.md</span>
+                        </div>
+                        <div class="help-text">Filename for the generated markdown file</div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card h-100 text-dark mb-3" style="border-color: #EB1946;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Download Your File</h5>
+                                <p class="card-text">
+                                    Click the button below to generate and download your markdown file
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn w-100 text-white" style="background-color: #EB1946; margin-top:6px;">
+                                    Go to Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+                <strong>Success!</strong> Your markdown file has been downloaded.
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function generateMarkdown() {
+            const redirectTo = document.getElementById('redirectTo').value;
+            const section = document.getElementById('section').value;
+            const description = document.getElementById('description').value;
+            const titleCamel = document.getElementById('titleCamel').value;
+
+            const markdown = `---
+redirect_to: ${redirectTo}
+section: ${section}
+description: ${description}
+titlecamel: ${titleCamel}
+---`;
+
+            return markdown;
+        }
+
+        function downloadMarkdown() {
+            const markdownContent = generateMarkdown();
+            const filename = document.getElementById('filename').value + '.md';
+            
+            const blob = new Blob([markdownContent], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        document.getElementById('mdForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            downloadMarkdown();
+        });
+
+        // Auto-generate filename from title (lowercase, no hyphens)
+        document.getElementById('titleCamel').addEventListener('input', function(e) {
+            const titleCamel = e.target.value;
+            const filename = titleCamel.toLowerCase().replace(/[^a-z0-9]/g, '');
+            
+            if (filename && !document.getElementById('filename').value) {
+                document.getElementById('filename').value = filename;
+            }
+        });
+    </script>
+</body>
+</html>
