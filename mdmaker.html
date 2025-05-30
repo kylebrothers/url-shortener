@@ -94,9 +94,58 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="section" class="form-label">Section</label>
-                        <input type="text" class="form-control" id="section" name="section" placeholder="none" value="none">
-                        <div class="help-text">Section categorization (typically "none")</div>
+                        <label class="form-label">Section</label>
+                        <div class="help-text mb-2">Section categorization</div>
+                        <div class="row row-cols-2 g-2">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-none" value="none" checked>
+                                    <label class="form-check-label" for="section-none">none</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-approval" value="approval">
+                                    <label class="form-check-label" for="section-approval">approval</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-casereport" value="casereport">
+                                    <label class="form-check-label" for="section-casereport">casereport</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-poster" value="poster">
+                                    <label class="form-check-label" for="section-poster">poster</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-grant" value="grant">
+                                    <label class="form-check-label" for="section-grant">grant</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-epic" value="epic">
+                                    <label class="form-check-label" for="section-epic">epic</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-tech" value="tech">
+                                    <label class="form-check-label" for="section-tech">tech</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="section" id="section-other" value="other">
+                                    <label class="form-check-label" for="section-other">other</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-12">
@@ -153,7 +202,7 @@
     <script>
         function generateMarkdown() {
             const redirectTo = document.getElementById('redirectTo').value;
-            const section = document.getElementById('section').value;
+            const section = document.querySelector('input[name="section"]:checked').value;
             const description = document.getElementById('description').value;
             const titleCamel = document.getElementById('titleCamel').value;
 
@@ -198,11 +247,10 @@ titlecamel: ${titleCamel}
         // Auto-generate filename from title (lowercase, no hyphens)
         document.getElementById('titleCamel').addEventListener('input', function(e) {
             const titleCamel = e.target.value;
-            const filename = titleCamel.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const filename = titleCamel.toLowerCase().replace(/[^a-z0-9_-]/g, '');
             
-            if (filename && !document.getElementById('filename').value) {
-                document.getElementById('filename').value = filename;
-            }
+            // Always update filename to match current title
+            document.getElementById('filename').value = filename;
         });
     </script>
 </body>
