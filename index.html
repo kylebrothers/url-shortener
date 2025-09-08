@@ -15,7 +15,7 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:24px;">Getting a Research Project Approved</h2>
+<h2 id="approval" style="margin-top:24px;">Getting a Research Project Approved</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'approval'" %}
@@ -37,7 +37,7 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:24px;">Case Report Resources</h2>
+<h2 id="casereport" style="margin-top:24px;">Case Report Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'casereport'" %}
@@ -48,7 +48,7 @@ layout: default
 
 </div>
   
-<h2 style="margin-top:24px;">Poster and Presentation Resources</h2>
+<h2 id="poster" style="margin-top:24px;">Poster and Presentation Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'poster'" %}
@@ -59,7 +59,7 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:24px;">Grant Resources</h2>
+<h2 id="grant" style="margin-top:24px;">Grant Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
   
 {% assign grant_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'grant'" %}
@@ -71,7 +71,7 @@ layout: default
 </div>
 
 
-<h2 style="margin-top:24px;">Epic and SlicerDicer</h2>
+<h2 id="epic" style="margin-top:24px;">Epic and SlicerDicer</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'epic'" %}
@@ -83,7 +83,7 @@ layout: default
 </div>
 
   
-<h2 style="margin-top:24px;">Data and Technology Resources</h2>
+<h2 id="tech" style="margin-top:24px;">Data and Technology Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
 
 {% assign casereport_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'tech'" %}
@@ -95,7 +95,7 @@ layout: default
 </div>
 
 
-<h2 style="margin-top:24px;">Other Research Resources</h2>
+<h2 id="other" style="margin-top:24px;">Other Research Resources</h2>
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'other'" %}
