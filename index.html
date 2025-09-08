@@ -26,8 +26,8 @@ layout: default
 
 </div>
 
-<h2 style="margin-top:24px;">Getting a QI Project Approved</h2>
-<div id="qi" class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
+<h2 id="qi" style="margin-top:24px;">Getting a QI Project Approved</h2>
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-4">
   
 {% assign approval_redirects = site.urls | where_exp: "item", "item.redirect_to != nil"  | where_exp: "item", "item.section == 'qi'" %}
 
