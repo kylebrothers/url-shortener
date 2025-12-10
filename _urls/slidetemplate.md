@@ -1,5 +1,5 @@
 ---
-redirect_to: https://cardmaillouisville.sharepoint.com/:p:/s/PediatricResearchAccesstoServices/EQIjV-Tk8nJIqxwxiyL0EBgBZ3E2s9YF1tPt4Jjz9dw61Q?e=iWzMej
+redirect_to: https://louisville.box.com/s/oplr9wa9vnwvtxqvrqk8ysvtgyl4sxu3
 section: poster
 description: PowerPoint Slide template
 titlecamel: SlideTemplate
