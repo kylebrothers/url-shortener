@@ -1,5 +1,5 @@
 ---
-redirect_to: https://louisville.box.com/s/7e1dszggldcq8y5vdxh05jwryn3ralkc
+redirect_to: https://louisville.box.com/s/vakquxkmnoctad8oukp5f9shsou8yahd
 section: poster
 description: Poster template and poster guidelines
 titlecamel: PosterTemplate
