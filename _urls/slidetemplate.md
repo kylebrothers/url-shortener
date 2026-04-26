@@ -1,6 +1,6 @@
 ---
-redirect_to: https://louisville.box.com/s/oplr9wa9vnwvtxqvrqk8ysvtgyl4sxu3
+redirect_to: https://dam.nortonhealthcare.com/share/58EC2760-6E6E-4A57-9604FD160696A0FC/?viewType=grid
 section: poster
-description: PowerPoint Slide template
+description: Service-line specific PowerPoint slide templates
 titlecamel: SlideTemplate
 ---
