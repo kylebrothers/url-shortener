@@ -7,8 +7,24 @@
       </p>
     </div>
     <div class="card-footer">
-      <a class="btn w-100 {{ include.style }}" href="{{ include.url | relative_url }}" role="button" style="background-color: {{ include.color }}; margin-top:6px;">Go to /{{ include.titlecamel }}</a>
-      <button class="btn w-100 {{ include.style }}" style="background-color: {{ include.color }};  margin-top:6px;" onclick="CopyToClipboard('{{ include.url | absolute_url }}');">Copy Link to Clipboard</button>
+      <div class="d-flex gap-2">
+        <a class="btn flex-grow-1 {{ include.style }}" href="{{ include.url | relative_url }}" role="button" style="background-color: {{ include.color }};">Go to Page</a>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle {{ include.style }}" style="background-color: {{ include.color }};" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button class="dropdown-item" onclick="copyLink('{{ include.url | absolute_url }}', this)">Copy Link to Clipboard</button>
+            </li>
+            <li>
+              <button class="dropdown-item" onclick="copyQRImage('{{ include.url | absolute_url }}', this)">Copy QR Image to Clipboard</button>
+            </li>
+            <li>
+              <button class="dropdown-item" onclick="showQRModal('{{ include.titlecamel }}', '{{ include.url | absolute_url }}')">Display QR Code</button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
