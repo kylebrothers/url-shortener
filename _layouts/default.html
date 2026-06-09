@@ -22,7 +22,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body text-center">
-            <canvas id="qrModalCanvas"></canvas>
+            <div id="qrModalContainer"></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -44,15 +44,13 @@
 
       function showQRModal(title, url) {
         const modalLabel = document.getElementById('qrModalLabel');
-        const canvas = document.getElementById('qrModalCanvas');
+        const container = document.getElementById('qrModalContainer');
         modalLabel.textContent = title;
 
         // Clear previous QR code
-        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-        canvas.width = 0;
-        canvas.height = 0;
+        container.innerHTML = '';
 
-        new QRCode(canvas, {
+        new QRCode(container, {
           text: url,
           width: 256,
           height: 256
