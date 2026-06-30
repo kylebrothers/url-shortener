@@ -1,5 +1,5 @@
 ---
-redirect_to: https://louisville.box.com/s/7e1dszggldcq8y5vdxh05jwryn3ralkc
+redirect_to: https://cardmaillouisville.sharepoint.com/:p:/s/PediatricResearchAccesstoServices/IQAcgM-M8vwjSZJaqrOCMxeBAVZgZNhKm6W4-o9KcnddB08?e=bkH4S6
 section: poster
 description: Poster template in a vertical (aka portrait) orientation
 titlecamel: PosterTemplateVertical
