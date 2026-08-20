@@ -3,4 +3,5 @@ redirect_to: https://cardmaillouisville.sharepoint.com/:w:/s/PediatricResearchAc
 section: qi
 description: Detailed guideline for getting your QI activity or QI research project approved
 titlecamel: QIGuideline
+order: 1
 ---
