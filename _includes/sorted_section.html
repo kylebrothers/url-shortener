@@ -1,0 +1,21 @@
+{% comment %}
+  Renders one section's cards, sorted so cards with a numeric "order"
+  front-matter field come first (ascending, decimals allowed for
+  inserting between existing values), followed by all other cards in
+  alphabetical order by filename (matching prior default behavior).
+
+  Usage:
+  {% include sorted_section.html section="tech" color="#FDC800" style="text-dark" %}
+{% endcomment %}
+
+{% assign section_items = site.urls
+  | where_exp: "item", "item.redirect_to != nil"
+  | where_exp: "item", "item.section == include.section" %}
+
+{% assign numbered = section_items | where_exp: "item", "item.order != nil and item.order != empty" | sort: "order" %}
+{% assign unnumbered = section_items | where_exp: "item", "item.order == nil or item.order == empty" | sort: "path" %}
+{% assign final_items = numbered | concat: unnumbered %}
+
+{% for page in final_items %}
+  {% include card.html url=page.url titlecamel=page.titlecamel description=page.description color=include.color style=include.style %}
+{% endfor %}
