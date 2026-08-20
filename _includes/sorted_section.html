@@ -4,6 +4,11 @@
   inserting between existing values), followed by all other cards in
   alphabetical order by filename (matching prior default behavior).
 
+  NOTE: Jekyll's where_exp filter only parses a single comparison per
+  call (no "and"/"or" inside one expression) -- so every multi-part
+  condition below is built by chaining where_exp calls, same as the
+  rest of this site's templates.
+
   Usage:
   {% include sorted_section.html section="tech" color="#FDC800" style="text-dark" %}
 {% endcomment %}
@@ -12,8 +17,13 @@
   | where_exp: "item", "item.redirect_to != nil"
   | where_exp: "item", "item.section == include.section" %}
 
-{% assign numbered = section_items | where_exp: "item", "item.order != nil and item.order != empty" | sort: "order" %}
-{% assign unnumbered = section_items | where_exp: "item", "item.order == nil or item.order == empty" | sort: "path" %}
+{% assign order_present = section_items | where_exp: "item", "item.order != nil" %}
+{% assign numbered = order_present | where_exp: "item", "item.order != empty" | sort: "order" %}
+
+{% assign nil_items = section_items | where_exp: "item", "item.order == nil" %}
+{% assign empty_items = order_present | where_exp: "item", "item.order == empty" %}
+{% assign unnumbered = nil_items | concat: empty_items | sort: "path" %}
+
 {% assign final_items = numbered | concat: unnumbered %}
 
 {% for page in final_items %}
