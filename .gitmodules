@@ -1,0 +1,3 @@
+[submodule "assets/childrenstheme"]
+	path = assets/childrenstheme
+	url = https://github.com/kylebrothers/childrenstheme.git

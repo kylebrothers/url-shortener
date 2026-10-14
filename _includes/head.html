@@ -3,5 +3,5 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kylebrothers/childrenstheme@main/dist/theme.css">
+  <link rel="stylesheet" href="{{ '/assets/childrenstheme/dist/theme.css' | relative_url }}?v={{ site.github.build_revision }}">
 </head>
